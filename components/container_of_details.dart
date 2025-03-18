@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget containerOfSection()=> Container(
+Widget containerOfDetails(screenWidth, screenHeight)=> Container(
   width: double.infinity,
   padding: const EdgeInsets.all(20),
   decoration: BoxDecoration(
@@ -10,10 +10,16 @@ Widget containerOfSection()=> Container(
   child: Row(
     textDirection: TextDirection.rtl,
     children: [
-      CircleAvatar(
-        radius: 40,
-        // backgroundColor: Colors.black,
-        backgroundImage: AssetImage("assets/images/download.png"),
+      ClipRRect(
+        borderRadius: BorderRadius.circular(10),
+        child: SizedBox(
+          width: screenWidth * 0.27,
+          height: screenHeight * 0.12,
+          child: Image.asset(
+            'assets/images/2.jpg',
+            fit: BoxFit.cover,
+          ),
+        ),
       ),
       SizedBox(width: 20),
       Column(
