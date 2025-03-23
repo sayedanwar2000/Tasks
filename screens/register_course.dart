@@ -6,6 +6,7 @@ import 'package:video_player/video_player.dart';
 import '../tabs/about_coach_tab.dart';
 import '../tabs/details_tab.dart';
 import '../tabs/overview_tab.dart';
+import '../tabs/rating_tab.dart';
 import '../tabs/ratings_tab.dart';
 
 class RegisterCourseScreen extends StatelessWidget {
@@ -260,7 +261,7 @@ class RegisterCourseScreen extends StatelessWidget {
                                     index < 3
                                         ? Colors.red
                                         : Colors
-                                            .green, // تغيير اللون بناءً على التقييم
+                                            .green,
                               );
                             },
                             onRatingUpdate: (rating) {},
@@ -350,10 +351,10 @@ class RegisterCourseScreen extends StatelessWidget {
                     height: screenHeight * 0.85,
                     child: TabBarView(
                       children: [
-                        OverviewTab(),
-                        DetailsTab(),
-                        AboutCoachTab(),
-                        RatingsTab(),
+                        overviewTab(),
+                        detailsTab(screenWidth, screenHeight),
+                        aboutCoachTab(),
+                        ratingsTab(),
                       ],
                     ),
                   ),
